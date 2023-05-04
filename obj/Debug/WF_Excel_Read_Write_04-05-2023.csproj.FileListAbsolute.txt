@@ -1,0 +1,12 @@
+C:\Users\Fishman_1\Documents\GitHub\WF_Excel_Read_Write_04-05-2023\bin\Debug\WF_Excel_Read_Write_04-05-2023.exe.config
+C:\Users\Fishman_1\Documents\GitHub\WF_Excel_Read_Write_04-05-2023\bin\Debug\WF_Excel_Read_Write_04-05-2023.exe
+C:\Users\Fishman_1\Documents\GitHub\WF_Excel_Read_Write_04-05-2023\bin\Debug\WF_Excel_Read_Write_04-05-2023.pdb
+C:\Users\Fishman_1\Documents\GitHub\WF_Excel_Read_Write_04-05-2023\obj\Debug\WF_Excel_Read_Write_04-05-2023.csproj.AssemblyReference.cache
+C:\Users\Fishman_1\Documents\GitHub\WF_Excel_Read_Write_04-05-2023\obj\Debug\WF_Excel_Read_Write_04-05-2023.csproj.SuggestedBindingRedirects.cache
+C:\Users\Fishman_1\Documents\GitHub\WF_Excel_Read_Write_04-05-2023\obj\Debug\WF_Excel_Read_Write_04-05-2023.csproj.ResolveComReference.cache
+C:\Users\Fishman_1\Documents\GitHub\WF_Excel_Read_Write_04-05-2023\obj\Debug\WF_Excel_Read_Write_04_05_2023.Form1.resources
+C:\Users\Fishman_1\Documents\GitHub\WF_Excel_Read_Write_04-05-2023\obj\Debug\WF_Excel_Read_Write_04_05_2023.Properties.Resources.resources
+C:\Users\Fishman_1\Documents\GitHub\WF_Excel_Read_Write_04-05-2023\obj\Debug\WF_Excel_Read_Write_04-05-2023.csproj.GenerateResource.cache
+C:\Users\Fishman_1\Documents\GitHub\WF_Excel_Read_Write_04-05-2023\obj\Debug\WF_Excel_Read_Write_04-05-2023.csproj.CoreCompileInputs.cache
+C:\Users\Fishman_1\Documents\GitHub\WF_Excel_Read_Write_04-05-2023\obj\Debug\WF_Excel_Read_Write_04-05-2023.exe
+C:\Users\Fishman_1\Documents\GitHub\WF_Excel_Read_Write_04-05-2023\obj\Debug\WF_Excel_Read_Write_04-05-2023.pdb
