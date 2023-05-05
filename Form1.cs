@@ -11,6 +11,9 @@ using System.Runtime.InteropServices;
 
 //Microsoft Excel 16 object in references-> COM tab
 using Excel = Microsoft.Office.Interop.Excel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Microsoft.Office.Interop.Excel;
+using System.Xml.Linq;
 
 namespace WF_Excel_Read_Write_04_05_2023
 {
@@ -19,15 +22,23 @@ namespace WF_Excel_Read_Write_04_05_2023
         public Form1()
         {
             InitializeComponent();
+           
+
         }
-        private string FileName = @"D:\data.xlsx";
+        private string FileName = @"C:\Users\Fishman_1\Documents\data.xlsx";
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
-
+        // не работает нужно указать путь
+        private void buttSave_Click(object sender, EventArgs e)
+        {
+           
+        }
         private void btnWrite_Click(object sender, EventArgs e)
         {
+
             // Set cursor as hourglass
             Cursor.Current = Cursors.WaitCursor;
             Excel.Application xlApp = new Excel.Application();
@@ -93,6 +104,13 @@ namespace WF_Excel_Read_Write_04_05_2023
 
             // Set cursor as default arrow
             Cursor.Current = Cursors.Default;
+        }
+
+
+
+        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+           
         }
     }
 }

@@ -32,6 +32,8 @@
             this.txtRead = new System.Windows.Forms.TextBox();
             this.btnRead = new System.Windows.Forms.Button();
             this.btnWrite = new System.Windows.Forms.Button();
+            this.buttSave = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // txtWrite
@@ -70,15 +72,31 @@
             this.btnWrite.UseVisualStyleBackColor = true;
             this.btnWrite.Click += new System.EventHandler(this.btnWrite_Click);
             // 
+            // buttSave
+            // 
+            this.buttSave.Location = new System.Drawing.Point(16, 315);
+            this.buttSave.Name = "buttSave";
+            this.buttSave.Size = new System.Drawing.Size(247, 23);
+            this.buttSave.TabIndex = 4;
+            this.buttSave.Text = "SaveAs";
+            this.buttSave.UseVisualStyleBackColor = true;
+            this.buttSave.Click += new System.EventHandler(this.buttSave_Click);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(299, 313);
+            this.ClientSize = new System.Drawing.Size(284, 361);
+            this.Controls.Add(this.buttSave);
             this.Controls.Add(this.btnWrite);
             this.Controls.Add(this.btnRead);
             this.Controls.Add(this.txtRead);
             this.Controls.Add(this.txtWrite);
+            this.MaximumSize = new System.Drawing.Size(300, 400);
             this.Name = "Form1";
             this.Text = "U-83";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -93,6 +111,8 @@
         private System.Windows.Forms.TextBox txtRead;
         private System.Windows.Forms.Button btnRead;
         private System.Windows.Forms.Button btnWrite;
+        private System.Windows.Forms.Button buttSave;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 
