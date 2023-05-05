@@ -14,6 +14,8 @@ using Excel = Microsoft.Office.Interop.Excel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Microsoft.Office.Interop.Excel;
 using System.Xml.Linq;
+using System.IO;
+using System.Reflection.Emit;
 
 namespace WF_Excel_Read_Write_04_05_2023
 {
@@ -25,8 +27,8 @@ namespace WF_Excel_Read_Write_04_05_2023
            
 
         }
-        private string FileName = @"C:\Users\Fishman_1\Documents\data.xlsx";
-
+        //private string FileName = @"C:\Users\Fishman_1\Documents\data.xlsx";
+        public string filename2 = "";
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -34,15 +36,31 @@ namespace WF_Excel_Read_Write_04_05_2023
         // не работает нужно указать путь
         private void buttSave_Click(object sender, EventArgs e)
         {
-           
+            
+            SaveFileDialog saveFile = new SaveFileDialog
+            {
+                Filter = "Excel (*.xls)|*.xls",
+                Title = "Сохранить"
+            };
+
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                FileStream fileStream = new FileStream(saveFile.FileName,
+                    FileMode.Create, FileAccess.Write);
+                filename2 = saveFile.FileName;
+                StreamWriter writer = new StreamWriter(fileStream, Encoding.UTF8);
+                //writer.WriteLine("");
+
+            }
         }
-        private void btnWrite_Click(object sender, EventArgs e)
+            private void btnWrite_Click(object sender, EventArgs e)
         {
 
             // Set cursor as hourglass
             Cursor.Current = Cursors.WaitCursor;
             Excel.Application xlApp = new Excel.Application();
-            Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(FileName);
+            Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(filename2);
             Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
             Excel.Range xlRange = xlWorksheet.UsedRange;
 
@@ -77,7 +95,7 @@ namespace WF_Excel_Read_Write_04_05_2023
             Cursor.Current = Cursors.WaitCursor;
 
             Excel.Application xlApp = new Excel.Application();
-            Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(FileName);
+            Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(filename2);
             Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
             Excel.Range xlRange = xlWorksheet.UsedRange;
 
