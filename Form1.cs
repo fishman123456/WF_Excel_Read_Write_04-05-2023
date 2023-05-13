@@ -8,9 +8,11 @@ using Microsoft.Office.Interop.Excel;
 using System.IO;
 using System.Collections.Generic;
 using OfficeOpenXml;
+using System.Security.Cryptography.X509Certificates;
 
 namespace WF_Excel_Read_Write_04_05_2023
 {
+    // 14-05-2023 надо сохранять название и путь последнего используемого файла
     public partial class Form1 : Form
     {
         public Form1()
@@ -27,6 +29,10 @@ namespace WF_Excel_Read_Write_04_05_2023
         // работает только нужно создать файл
         private void buttSave_Click(object sender, EventArgs e)
         {
+             void SaveFileExcel()
+            {
+
+            }
             // нужен NuGet EPPlus
             // заработало 14-05-2023 00:07 
             SaveFileDialog saveFile = new SaveFileDialog();
@@ -202,5 +208,46 @@ namespace WF_Excel_Read_Write_04_05_2023
         {
 
         }
+        // функция для создания файла
+        public void SaveFileExcel()
+        {
+
+            // нужен NuGet EPPlus
+            // заработало 14-05-2023 00:07 
+            SaveFileDialog saveFile = new SaveFileDialog();
+            {
+                saveFile.Filter = "(*.xlsx)|*.xlsx|Все файлы (*.*)|*.*\"\"\r\n";
+                saveFile.Title = "Сохранить";
+            };
+
+            ///
+            // третий вариант
+            //https://stackoverflow.com/questions/64824327/i-am-getting-an-error-while-exporting-to-excel
+            //var saveFileDialog = new SaveFileDialog();
+            //saveFileDialog.FileName = "";
+            //saveFileDialog.DefaultExt = ".xls";
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                filename2 = saveFile.FileName;
+                ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+                using (ExcelPackage pck = new ExcelPackage(new FileInfo(saveFile.FileName)))
+                {
+                    try
+                    {
+                        ExcelWorksheet ws = pck.Workbook.Worksheets.Add("Первый");
+                        ws.Cells["A1"].Value = "1";
+                        pck.Save();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                        //throw;
+                    }
+
+                }
+            }
+        }
     }
+
 }
