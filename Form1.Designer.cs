@@ -43,6 +43,7 @@
             this.txtWrite.Name = "txtWrite";
             this.txtWrite.Size = new System.Drawing.Size(100, 261);
             this.txtWrite.TabIndex = 0;
+            this.txtWrite.TextChanged += new System.EventHandler(this.txtWrite_TextChanged);
             // 
             // txtRead
             // 

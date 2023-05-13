@@ -10,3 +10,10 @@ C:\Users\Fishman_1\Documents\GitHub\WF_Excel_Read_Write_04-05-2023\obj\Debug\WF_
 C:\Users\Fishman_1\Documents\GitHub\WF_Excel_Read_Write_04-05-2023\obj\Debug\WF_Excel_Read_Write_04-05-2023.csproj.CoreCompileInputs.cache
 C:\Users\Fishman_1\Documents\GitHub\WF_Excel_Read_Write_04-05-2023\obj\Debug\WF_Excel_Read_Write_04-05-2023.exe
 C:\Users\Fishman_1\Documents\GitHub\WF_Excel_Read_Write_04-05-2023\obj\Debug\WF_Excel_Read_Write_04-05-2023.pdb
+C:\Users\Fishman_1\Documents\GitHub\WF_Excel_Read_Write_04-05-2023\bin\Debug\EPPlus.dll
+C:\Users\Fishman_1\Documents\GitHub\WF_Excel_Read_Write_04-05-2023\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\Fishman_1\Documents\GitHub\WF_Excel_Read_Write_04-05-2023\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\Fishman_1\Documents\GitHub\WF_Excel_Read_Write_04-05-2023\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\Fishman_1\Documents\GitHub\WF_Excel_Read_Write_04-05-2023\bin\Debug\EPPlus.xml
+C:\Users\Fishman_1\Documents\GitHub\WF_Excel_Read_Write_04-05-2023\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\Fishman_1\Documents\GitHub\WF_Excel_Read_Write_04-05-2023\obj\Debug\WF_Excel_Read_Write_04-05-2023.csproj.CopyComplete
