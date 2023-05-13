@@ -16,8 +16,6 @@ namespace WF_Excel_Read_Write_04_05_2023
         public Form1()
         {
             InitializeComponent();
-           
-
         }
         //private string FileName = @"C:\Users\Fishman_1\Documents\data.xlsx";
         public string filename2 = "";
@@ -25,7 +23,8 @@ namespace WF_Excel_Read_Write_04_05_2023
         {
 
         }
-        // не работает нужно указать путь
+        //// не работает нужно указать путь
+        // работает только нужно создать файл
         private void buttSave_Click(object sender, EventArgs e)
         {
             // нужен NuGet EPPlus
@@ -51,8 +50,8 @@ namespace WF_Excel_Read_Write_04_05_2023
                 {
                     try
                     {
-                        ExcelWorksheet ws = pck.Workbook.Worksheets.Add("StokBilgisi");
-                        ws.Cells["A1"].Value = "69";
+                        ExcelWorksheet ws = pck.Workbook.Worksheets.Add("Первый");
+                        ws.Cells["A1"].Value = "1";
                         pck.Save();
                     }
                     catch (Exception ex)
@@ -102,6 +101,7 @@ namespace WF_Excel_Read_Write_04_05_2023
 
             #endregion
         }
+        // обработчик нажатия на клавишу записать в ексел
         private void btnWrite_Click(object sender, EventArgs e)
         {
             try
@@ -137,7 +137,7 @@ namespace WF_Excel_Read_Write_04_05_2023
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString(),"Скорее создайте файл");
                 //throw;
             }
             // Set cursor as hourglass
@@ -145,40 +145,50 @@ namespace WF_Excel_Read_Write_04_05_2023
 
             
         }
-
+        // обработчик нажатия на клавишу считать из ексел
         private void btnRead_Click(object sender, EventArgs e)
         {
-            // Set cursor as hourglass
-            Cursor.Current = Cursors.WaitCursor;
-
-            Excel.Application xlApp = new Excel.Application();
-            Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(filename2);
-            Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
-            Excel.Range xlRange = xlWorksheet.UsedRange;
-
-            if (xlRange.Cells[1, 1] != null && xlRange.Cells[1, 1].Value2 != null)
+            try
             {
-                txtRead.Text = xlRange.Cells[1, 1].Value2.ToString();
+                // Set cursor as hourglass
+                Cursor.Current = Cursors.WaitCursor;
+
+                Excel.Application xlApp = new Excel.Application();
+                Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(filename2);
+                Excel._Worksheet xlWorksheet = xlWorkbook.Sheets[1];
+                Excel.Range xlRange = xlWorksheet.UsedRange;
+
+                if (xlRange.Cells[1, 1] != null && xlRange.Cells[1, 1].Value2 != null)
+                {
+                    txtRead.Text = xlRange.Cells[1, 1].Value2.ToString();
+                }
+
+                //cleanup
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+
+                //release com objects to fully kill excel process from running in the background
+                Marshal.ReleaseComObject(xlRange);
+                Marshal.ReleaseComObject(xlWorksheet);
+
+                //close and release
+                xlWorkbook.Close();
+                Marshal.ReleaseComObject(xlWorkbook);
+
+                //quit and release
+                xlApp.Quit();
+                Marshal.ReleaseComObject(xlApp);
+
+                // Set cursor as default arrow
+                Cursor.Current = Cursors.Default;
             }
+            catch (Exception ex)
+            {
 
-            //cleanup
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
-
-            //release com objects to fully kill excel process from running in the background
-            Marshal.ReleaseComObject(xlRange);
-            Marshal.ReleaseComObject(xlWorksheet);
-
-            //close and release
-            xlWorkbook.Close();
-            Marshal.ReleaseComObject(xlWorkbook);
-
-            //quit and release
-            xlApp.Quit();
-            Marshal.ReleaseComObject(xlApp);
-
-            // Set cursor as default arrow
-            Cursor.Current = Cursors.Default;
+                MessageBox.Show(ex.ToString(),"Скорее создайте файл");
+                //throw;
+            }
+           
         }
 
 

@@ -34,6 +34,7 @@
             this.btnWrite = new System.Windows.Forms.Button();
             this.buttSave = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtWrite
@@ -87,11 +88,21 @@
             // 
             this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(45, 341);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(207, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Перед использованием создайте файл";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 361);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttSave);
             this.Controls.Add(this.btnWrite);
             this.Controls.Add(this.btnRead);
@@ -99,6 +110,7 @@
             this.Controls.Add(this.txtWrite);
             this.MaximumSize = new System.Drawing.Size(300, 400);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "U-83";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -114,6 +126,7 @@
         private System.Windows.Forms.Button btnWrite;
         private System.Windows.Forms.Button buttSave;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
