@@ -35,11 +35,12 @@
             this.buttSave = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.label1 = new System.Windows.Forms.Label();
+            this.buttLoad = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtWrite
             // 
-            this.txtWrite.Location = new System.Drawing.Point(16, 12);
+            this.txtWrite.Location = new System.Drawing.Point(163, 12);
             this.txtWrite.Multiline = true;
             this.txtWrite.Name = "txtWrite";
             this.txtWrite.Size = new System.Drawing.Size(100, 261);
@@ -48,7 +49,7 @@
             // 
             // txtRead
             // 
-            this.txtRead.Location = new System.Drawing.Point(163, 12);
+            this.txtRead.Location = new System.Drawing.Point(24, 12);
             this.txtRead.Multiline = true;
             this.txtRead.Name = "txtRead";
             this.txtRead.Size = new System.Drawing.Size(100, 261);
@@ -56,31 +57,31 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(163, 279);
+            this.btnRead.Location = new System.Drawing.Point(24, 279);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(100, 23);
             this.btnRead.TabIndex = 2;
-            this.btnRead.Text = "Read";
+            this.btnRead.Text = "Прочитать";
             this.btnRead.UseVisualStyleBackColor = true;
             this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
             // 
             // btnWrite
             // 
-            this.btnWrite.Location = new System.Drawing.Point(16, 279);
+            this.btnWrite.Location = new System.Drawing.Point(163, 279);
             this.btnWrite.Name = "btnWrite";
             this.btnWrite.Size = new System.Drawing.Size(100, 23);
             this.btnWrite.TabIndex = 3;
-            this.btnWrite.Text = "Write";
+            this.btnWrite.Text = "Записать";
             this.btnWrite.UseVisualStyleBackColor = true;
             this.btnWrite.Click += new System.EventHandler(this.btnWrite_Click);
             // 
             // buttSave
             // 
-            this.buttSave.Location = new System.Drawing.Point(16, 315);
+            this.buttSave.Location = new System.Drawing.Point(163, 315);
             this.buttSave.Name = "buttSave";
-            this.buttSave.Size = new System.Drawing.Size(247, 23);
+            this.buttSave.Size = new System.Drawing.Size(100, 23);
             this.buttSave.TabIndex = 4;
-            this.buttSave.Text = "SaveAs";
+            this.buttSave.Text = "Сохранить файл";
             this.buttSave.UseVisualStyleBackColor = true;
             this.buttSave.Click += new System.EventHandler(this.buttSave_Click);
             // 
@@ -91,17 +92,28 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 341);
+            this.label1.Location = new System.Drawing.Point(33, 341);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(207, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Перед использованием создайте файл";
+            // 
+            // buttLoad
+            // 
+            this.buttLoad.Location = new System.Drawing.Point(24, 315);
+            this.buttLoad.Name = "buttLoad";
+            this.buttLoad.Size = new System.Drawing.Size(100, 23);
+            this.buttLoad.TabIndex = 6;
+            this.buttLoad.Text = "Открыть файл";
+            this.buttLoad.UseVisualStyleBackColor = true;
+            this.buttLoad.Click += new System.EventHandler(this.buttLoad_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 361);
+            this.Controls.Add(this.buttLoad);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttSave);
             this.Controls.Add(this.btnWrite);
@@ -127,6 +139,7 @@
         private System.Windows.Forms.Button buttSave;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttLoad;
     }
 }
 
